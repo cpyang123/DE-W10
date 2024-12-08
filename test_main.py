@@ -2,7 +2,7 @@ import subprocess
 
 
 def test_extract():
-    """tests extract()"""
+    """Tests the extract() function"""
     result = subprocess.run(
         ["python", "main.py", "extract"],
         capture_output=True,
@@ -14,7 +14,7 @@ def test_extract():
 
 
 def test_transform_load():
-    """tests transfrom_load"""
+    """Tests the transform_and_load() function"""
     result = subprocess.run(
         ["python", "main.py", "transform_load"],
         capture_output=True,
@@ -22,11 +22,11 @@ def test_transform_load():
         check=True,
     )
     assert result.returncode == 0
-    assert "Transforming data..." in result.stdout
+    assert "Transforming and loading data..." in result.stdout
 
 
 def test_general_query():
-    """tests general_query"""
+    """Tests the execute_query() function"""
     result = subprocess.run(
         ["python", "main.py", "general_query"],
         capture_output=True,
